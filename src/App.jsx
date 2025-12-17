@@ -77,7 +77,7 @@ function App() {
     }
 
     return (
-        <div style={{ padding: '2rem', maxWidth: '1200px', margin: '0 auto', fontFamily: 'Inter, sans-serif' }}>
+        <div className="app-container" style={{ fontFamily: 'Inter, sans-serif' }}>
             <header style={{ marginBottom: '2rem', borderBottom: '1px solid #30363d', paddingBottom: '1rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }} className="header-container">
                 <div style={{ display: 'flex', alignItems: 'flex-end', gap: '1rem', flexWrap: 'wrap' }}>
                     <h1 style={{ margin: 0, fontSize: '2rem', background: 'linear-gradient(90deg, #58a6ff, #8b949e)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', lineHeight: 1 }}>
