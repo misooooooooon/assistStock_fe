@@ -142,17 +142,17 @@ function App() {
                                     style={{ marginBottom: '1rem', borderBottom: '1px solid #30363d', paddingBottom: '0.5rem', cursor: 'pointer' }}
                                     className="hover-item"
                                 >
-                                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: '0.5rem' }}>
                                         <div>
-                                            <h3 style={{ margin: 0 }}>{rec.name || rec.ticker}</h3>
+                                            <h3 style={{ margin: 0, wordBreak: 'break-all' }}>{rec.name || rec.ticker}</h3>
                                             <div style={{ fontSize: '0.8rem', color: '#8b949e' }}>{rec.ticker}</div>
                                         </div>
-                                        <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
+                                        <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center', flexWrap: 'wrap', justifyContent: 'flex-end' }}>
                                             {/* Fundamental Badges */}
                                             {rec.analysis.fundamental && rec.analysis.fundamental.badges && rec.analysis.fundamental.badges.map((b, i) => (
-                                                <span key={i} className="tag" style={{ backgroundColor: '#1f6feb', color: 'white' }}>{b}</span>
+                                                <span key={i} className="tag" style={{ backgroundColor: '#1f6feb', color: 'white', whiteSpace: 'nowrap' }}>{b}</span>
                                             ))}
-                                            <span className="tag buy">{rec.analysis.signal}</span>
+                                            <span className="tag buy" style={{ whiteSpace: 'nowrap' }}>{rec.analysis.signal}</span>
                                         </div>
                                     </div>
                                     <div style={{ fontSize: '0.9rem', color: '#8b949e', marginBottom: '0.5rem' }}>

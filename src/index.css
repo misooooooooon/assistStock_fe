@@ -134,7 +134,7 @@ button:hover {
   .main-grid {
     width: 100%;
     box-sizing: border-box;
-    overflow-x: hidden;
+    /* overflow-x: hidden; <-- REMOVED to prevent cutting off content */
   }
 
   .card,
