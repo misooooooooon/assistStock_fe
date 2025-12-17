@@ -137,7 +137,6 @@ button:hover {
   max-width: 1200px;
   margin: 0 auto;
 }
-}
 
 .logo-container {
   display: flex;
@@ -150,6 +149,16 @@ button:hover {
 
 @media (max-width: 768px) {
   .desktop-only {
-    display: none;
+    display: none !important;
+  }
+}
+
+.mobile-only {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .mobile-only {
+    display: block;
   }
 }

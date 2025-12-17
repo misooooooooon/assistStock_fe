@@ -85,7 +85,7 @@ function App() {
                     </h1>
                     <span style={{ color: '#8b949e', fontSize: '0.9rem', fontWeight: 'normal', paddingBottom: '2px', lineHeight: 1.2 }}>( AI 기반의 투자 지원 솔루션 )</span>
                 </div>
-                <img src={logo} alt="Logo" style={{ height: '50px' }} />
+                <img src={logo} alt="Logo" style={{ height: '50px' }} className="desktop-only" />
             </header>
 
             <div className="main-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 2fr', gap: '2rem' }}>
@@ -321,6 +321,11 @@ function App() {
             <div style={{ gridColumn: '1 / -1', textAlign: 'center', color: '#8b949e', fontSize: '0.85rem', marginTop: '1rem' }}>
                 ⚠️ 투자 판단은 본인 책임! 수익은 보장되지 않아요.<br />
                 Contact: phan98susan@gmail.com
+            </div>
+
+            {/* Mobile Bottom Logo */}
+            <div className="mobile-only" style={{ textAlign: 'center', marginTop: '2rem', paddingBottom: '1rem' }}>
+                <img src={logo} alt="Logo" style={{ height: '50px', opacity: 0.8 }} />
             </div>
         </div>
     )
