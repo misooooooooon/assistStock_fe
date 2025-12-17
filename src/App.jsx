@@ -77,16 +77,21 @@ function App() {
 
     return (
         <div style={{ padding: '2rem', maxWidth: '1200px', margin: '0 auto', fontFamily: 'Inter, sans-serif' }}>
-            <header style={{ marginBottom: '2rem', borderBottom: '1px solid #30363d', paddingBottom: '1rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                <div>
-                    <h1 style={{ margin: 0, fontSize: '2rem', background: 'linear-gradient(90deg, #58a6ff, #8b949e)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
-                        주식 투자 어드바이저
-                    </h1>
-                    <p style={{ color: '#8b949e', margin: '0.5rem 0 0 0' }}>AI 기반의 지원 솔루션</p>
+            <header style={{ marginBottom: '2rem', borderBottom: '1px solid #30363d', paddingBottom: '1rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }} className="header-container">
+                <div style={{ display: 'flex', alignItems: 'center' }} className="logo-section">
+                    <img src="/logo.png" alt="Logo" style={{ height: '60px', marginRight: '1rem' }} />
+                    <div>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', flexWrap: 'wrap' }}>
+                            <h1 style={{ margin: 0, fontSize: '2rem', background: 'linear-gradient(90deg, #58a6ff, #8b949e)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
+                                주식 투자 어드바이저
+                            </h1>
+                            <span style={{ color: '#8b949e', fontSize: '0.9rem', fontWeight: 'normal' }}>( AI 기반의 투자 지원 솔루션 )</span>
+                        </div>
+                    </div>
                 </div>
             </header>
 
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 2fr', gap: '2rem' }}>
+            <div className="main-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 2fr', gap: '2rem' }}>
                 {/* Sidebar: Recommendations */}
                 {/* Sidebar: Recommendations */}
                 <div>
@@ -107,7 +112,7 @@ function App() {
                                     fontSize: '0.75rem'
                                 }}
                             >
-                                🇰🇷KR
+                                🇰🇷 KR
                             </button>
                             <button
                                 onClick={() => setMarket("US")}
@@ -121,7 +126,7 @@ function App() {
                                     fontSize: '0.75rem'
                                 }}
                             >
-                                🇺🇸US
+                                🇺🇸 US
                             </button>
                         </div>
                     </div>
@@ -299,54 +304,26 @@ function App() {
             </div>
 
             {/* Bottom Section: Optimization & Donation (Side by Side) */}
-            <div style={{ gridColumn: '1 / -1', marginTop: '2rem', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem', borderTop: '1px solid #30363d', paddingTop: '2rem' }}>
+            {/* Optimization (Removed UI, background only) */}
 
-                {/* Optimization */}
-                <section className="card" style={{ height: 'fit-content' }}>
-                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                        <div>
-                            <h3 style={{ margin: '0 0 0.5rem 0' }}>⚙️ AI 성능 고도화 (Optimization)</h3>
-                            <p style={{ fontSize: '0.85rem', color: '#8b949e', lineHeight: '1.4' }}>
-                                'Run Sim'을 클릭하면 <strong>종목 추천 시 모의 시뮬레이션이 강화</strong>되어,<br />
-                                더 정교한 매매 타이밍과 전략을 스스로 학습합니다.
-                            </p>
-                        </div>
-                        <button onClick={startOptimization}>Run Sim</button>
+            {/* Donation */}
+            <div style={{ background: '#161b22', padding: '1.5rem', borderRadius: '8px', textAlign: 'center', marginTop: '2rem' }}>
+                <h3 style={{ margin: '0 0 1rem 0', color: '#e6edf3' }}>☕ 개발자 후원 (Donation)</h3>
+                <div style={{ display: 'inline-block', background: '#0d1117', padding: '1rem', borderRadius: '8px', border: '1px solid #30363d', width: '100%', boxSizing: 'border-box' }}>
+                    <div style={{ fontSize: '1.1rem', fontWeight: 'bold', color: '#58a6ff', marginBottom: '0.5rem' }}>
+                        우리은행 1002-632-473859
                     </div>
-                    {optimizationStatus && (
-                        <div style={{ marginTop: '1rem' }}>
-                            <div>
-                                <strong>Best Score (ROI):</strong>
-                                <div style={{ fontSize: '0.8rem', color: '#8b949e', marginBottom: '0.2rem' }}>
-                                    (시뮬레이션 결과 예측되는 예상 투자 수익률)
-                                </div>
-                                <div style={{ fontSize: '1.5rem', color: 'var(--accent-color)' }}>
-                                    {optimizationStatus.best_score === -Infinity ? "N/A" : `${optimizationStatus.best_score?.toFixed(2)}%`}
-                                </div>
-                            </div>
-                        </div>
-                    )}
-                </section>
-
-                {/* Donation */}
-                <div style={{ background: '#161b22', padding: '1.5rem', borderRadius: '8px', textAlign: 'center' }}>
-                    <h3 style={{ margin: '0 0 1rem 0', color: '#e6edf3' }}>☕ 개발자 후원 (Donation)</h3>
-                    <div style={{ display: 'inline-block', background: '#0d1117', padding: '1rem', borderRadius: '8px', border: '1px solid #30363d', width: '100%', boxSizing: 'border-box' }}>
-                        <div style={{ fontSize: '1.1rem', fontWeight: 'bold', color: '#58a6ff', marginBottom: '0.5rem' }}>
-                            우리은행 1002-632-473859
-                        </div>
-                        <div style={{ color: '#8b949e' }}>예금주: 이재성</div>
-                    </div>
-                    <p style={{ fontSize: '0.85rem', color: '#8b949e', marginTop: '1rem', lineHeight: '1.5' }}>
-                        모든 기능은 무료이며 후원여부 무관하게 동일한 기능<br />
-                        을 제공하고, 후원자 전용 상담은 받지 않습니다. 🙌
-                    </p>
+                    <div style={{ color: '#8b949e' }}>예금주: 이재성</div>
                 </div>
+                <p style={{ fontSize: '0.85rem', color: '#8b949e', marginTop: '1rem', lineHeight: '1.5' }}>
+                    모든 기능은 무료이며 후원여부 무관하게 동일한 기능<br />
+                    을 제공하고, 후원자 전용 상담은 받지 않습니다. 🙌
+                </p>
+            </div>
 
-                <div style={{ gridColumn: '1 / -1', textAlign: 'center', color: '#8b949e', fontSize: '0.85rem', marginTop: '1rem' }}>
-                    ⚠️ 투자 판단은 본인 책임! 수익은 보장되지 않아요.<br />
-                    Contact: phan98susan@gmail.com
-                </div>
+            <div style={{ gridColumn: '1 / -1', textAlign: 'center', color: '#8b949e', fontSize: '0.85rem', marginTop: '1rem' }}>
+                ⚠️ 투자 판단은 본인 책임! 수익은 보장되지 않아요.<br />
+                Contact: phan98susan@gmail.com
             </div>
         </div>
     )
