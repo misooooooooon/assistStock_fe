@@ -142,6 +142,11 @@ button:hover {
     max-width: 100%;
   }
 
+  /* Reduce Heading size on mobile to prevent wrapping */
+  h2 {
+    font-size: 1.25rem;
+  }
+
   .app-container {
     padding: 1rem !important;
   }

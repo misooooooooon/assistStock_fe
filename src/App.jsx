@@ -87,7 +87,7 @@ function App() {
                         주식 투자 어드바이저
                     </h1>
                     <span style={{ color: '#8b949e', fontSize: '0.8rem', fontWeight: 'normal', paddingBottom: '2px', lineHeight: 1.4, textAlign: 'center' }}>
-                        ( 1. 추천종목 확인 하거나, 2. 종목을 입력해서 지표 및 최신 뉴스 확인 기능 )
+                        ( 1. 추천종목 확인 하거나, <br className="mobile-only" /> 2. 종목을 입력해서 지표 및 최신 뉴스 확인 기능 )
                     </span>
                 </div>
                 <img src={logo} alt="Logo" style={{ height: '50px' }} className="desktop-only" />
