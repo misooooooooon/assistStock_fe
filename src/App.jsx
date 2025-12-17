@@ -79,17 +79,13 @@ function App() {
     return (
         <div style={{ padding: '2rem', maxWidth: '1200px', margin: '0 auto', fontFamily: 'Inter, sans-serif' }}>
             <header style={{ marginBottom: '2rem', borderBottom: '1px solid #30363d', paddingBottom: '1rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }} className="header-container">
-                <div style={{ display: 'flex', alignItems: 'center' }} className="logo-section">
-                    <img src={logo} alt="Logo" style={{ height: '60px', marginRight: '1rem' }} />
-                    <div>
-                        <div style={{ display: 'flex', alignItems: 'flex-end', gap: '0.5rem', flexWrap: 'wrap' }}>
-                            <h1 style={{ margin: 0, fontSize: '2rem', background: 'linear-gradient(90deg, #58a6ff, #8b949e)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', lineHeight: 1 }}>
-                                주식 투자 어드바이저
-                            </h1>
-                            <span style={{ color: '#8b949e', fontSize: '0.9rem', fontWeight: 'normal', paddingBottom: '4px' }}>( AI 기반의 투자 지원 솔루션 )</span>
-                        </div>
-                    </div>
+                <div style={{ display: 'flex', alignItems: 'flex-end', gap: '1rem', flexWrap: 'wrap' }}>
+                    <h1 style={{ margin: 0, fontSize: '2rem', background: 'linear-gradient(90deg, #58a6ff, #8b949e)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', lineHeight: 1 }}>
+                        주식 투자 어드바이저
+                    </h1>
+                    <span style={{ color: '#8b949e', fontSize: '0.9rem', fontWeight: 'normal', paddingBottom: '2px', lineHeight: 1.2 }}>( AI 기반의 투자 지원 솔루션 )</span>
                 </div>
+                <img src={logo} alt="Logo" style={{ height: '50px' }} />
             </header>
 
             <div className="main-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 2fr', gap: '2rem' }}>
