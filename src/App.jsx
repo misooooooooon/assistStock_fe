@@ -12,6 +12,7 @@ function App() {
     const [prediction, setPrediction] = useState(null);
     const [optimizationStatus, setOptimizationStatus] = useState(null);
     const [loading, setLoading] = useState(false);
+    const [loadingRecs, setLoadingRecs] = useState(false);
 
     // Use environment variable for API URL (Production) or default to proxy (Development)
     const API_BASE_URL = import.meta.env.VITE_API_URL || "/api";
@@ -24,12 +25,14 @@ function App() {
     }, [market]); // Re-fetch when market changes
 
     const fetchRecommendations = async () => {
+        setLoadingRecs(true);
         try {
             const res = await axios.get(`${API_BASE_URL}/recommendations?market=${market}`);
             setRecommendations(res.data.recommendations || []);
         } catch (e) {
             console.error(e);
         }
+        setLoadingRecs(false);
     };
 
     const fetchOptimizationStatus = async () => {
@@ -134,7 +137,9 @@ function App() {
                     </p>
                     <button onClick={fetchRecommendations} style={{ marginBottom: '1rem', padding: '0.5rem 1rem', background: '#238636', color: 'white', border: 'none', borderRadius: '4px', cursor: 'pointer' }}>Refresh</button>
 
-                    {recommendations.length === 0 ? (
+                    {loadingRecs ? (
+                        <p style={{ color: '#8b949e' }}>Scanning market data... Please wait...</p>
+                    ) : recommendations.length === 0 ? (
                         <p>Scanning 30+ major stocks... No bullish signals found yet.</p>
                     ) : (
                         <ul style={{ maxHeight: 'calc(100vh - 250px)', overflowY: 'auto' }}>
