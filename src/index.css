@@ -105,6 +105,11 @@ button:hover {
   .container {
     padding: 1rem;
   }
+
+  .header-container img {
+    align-self: flex-end !important;
+    order: 2;
+  }
 }
 
 .logo-container {
