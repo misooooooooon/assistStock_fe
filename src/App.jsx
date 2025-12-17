@@ -83,7 +83,9 @@ function App() {
                     <h1 style={{ margin: 0, fontSize: '2rem', background: 'linear-gradient(90deg, #58a6ff, #8b949e)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', lineHeight: 1, textAlign: 'center' }}>
                         주식 투자 어드바이저
                     </h1>
-                    <span style={{ color: '#8b949e', fontSize: '0.9rem', fontWeight: 'normal', paddingBottom: '2px', lineHeight: 1.2 }}>( AI 기반의 투자 지원 솔루션 )</span>
+                    <span style={{ color: '#8b949e', fontSize: '0.8rem', fontWeight: 'normal', paddingBottom: '2px', lineHeight: 1.4, textAlign: 'center' }}>
+                        ( 1. 추천종목 확인 하거나, 2. 종목을 입력해서 지표 및 최신 뉴스 확인 기능 )
+                    </span>
                 </div>
                 <img src={logo} alt="Logo" style={{ height: '50px' }} className="desktop-only" />
             </header>
@@ -201,10 +203,10 @@ function App() {
                     {prediction && (
                         <div style={{ background: '#0d1117', padding: '1rem', borderRadius: '8px' }}>
                             <div style={{ marginBottom: '1rem' }}>
-                                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
+                                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: '1rem' }}>
                                     <div>
                                         <h3 style={{ margin: '0 0 0.5rem 0' }}>{ticker} Outlook: <span style={{ color: prediction.outlook === "Bullish" ? 'var(--success-color)' : 'var(--danger-color)' }}>{prediction.outlook}</span></h3>
-                                        <div style={{ display: 'flex', gap: '1.5rem', alignItems: 'center', marginTop: '0.5rem' }}>
+                                        <div style={{ display: 'flex', gap: '1rem', alignItems: 'center', marginTop: '0.5rem', flexWrap: 'wrap' }}>
                                             <div>
                                                 <div style={{ fontSize: '0.8rem', color: '#8b949e' }}>Current Price</div>
                                                 <div style={{ fontSize: '1.2rem', fontWeight: 'bold' }}>
@@ -229,12 +231,12 @@ function App() {
                                             </div>
                                         </div>
                                     </div>
-                                    <div style={{ textAlign: 'right', maxWidth: '250px' }}>
-                                        <div style={{ fontSize: '0.8rem', color: '#8b949e', marginBottom: '0.3rem' }}>
+                                    <div style={{ textAlign: 'right', maxWidth: 'none', width: '100%' }}>
+                                        <div style={{ fontSize: '0.8rem', color: '#8b949e', marginBottom: '0.3rem', textAlign: 'left' }}>
                                             Is based on <strong>Linear Regression</strong> trend of last 30 days.
                                         </div>
                                         {prediction.news_sentiment && prediction.news_sentiment.sources && (
-                                            <div style={{ fontSize: '0.75rem', color: '#58a6ff' }}>
+                                            <div style={{ fontSize: '0.75rem', color: '#58a6ff', textAlign: 'left' }}>
                                                 Sources: {prediction.news_sentiment.sources.join(", ")}
                                             </div>
                                         )}
@@ -266,8 +268,12 @@ function App() {
                             {/* News Section */}
                             {prediction.news_sentiment && (
                                 <div style={{ background: '#161b22', padding: '1rem', borderRadius: '8px', border: '1px solid #30363d' }}>
-                                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.5rem' }}>
-                                        <strong>📰 Latest News Sentiment (Last 30 Days)</strong>
+                                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.5rem', flexWrap: 'wrap' }}>
+                                        <div>
+                                            <strong>📰 Latest News Sentiment</strong>
+                                            <div className="mobile-only-block" style={{ fontSize: '0.85rem', color: '#8b949e' }}>( Last 30 Days )</div>
+                                            <span className="desktop-only" style={{ marginLeft: '0.5rem' }}>( Last 30 Days )</span>
+                                        </div>
                                         <span className={`tag ${prediction.news_sentiment.sentiment === "Positive" ? "buy" : prediction.news_sentiment.sentiment === "Negative" ? "sell" : ""}`}>
                                             {prediction.news_sentiment.sentiment} {prediction.news_sentiment.score !== 0 && `(${prediction.news_sentiment.score > 0 ? "+" : ""}${prediction.news_sentiment.score})`}
                                         </span>

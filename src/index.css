@@ -176,4 +176,10 @@ button:hover {
   .mobile-only {
     display: block;
   }
+
+  .mobile-only-block {
+    display: block;
+  }
 }
+
+/* Ensure desktop-only hidden on mobile is strict, reusing valid logic */
