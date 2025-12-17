@@ -107,24 +107,39 @@ button:hover {
   }
 
   /* Mobile Header Reordering */
+  /* Mobile Header Reordering */
   .header-container {
     flex-direction: column !important;
     align-items: center !important;
     text-align: center;
+    width: 100%;
   }
 
+  /* Fixed selector spacing */
   .header-container>div {
     display: flex;
     flex-direction: column;
     align-items: center !important;
     width: 100%;
+    margin-right: 0 !important;
   }
 
   .header-container img {
     margin-top: 1rem;
     order: 10;
-    /* Force to bottom */
     align-self: center !important;
+  }
+
+  /* Prevent overflow on mobile */
+  .main-grid {
+    width: 100%;
+    box-sizing: border-box;
+    overflow-x: hidden;
+  }
+
+  .card,
+  .recharts-responsive-container {
+    max-width: 100%;
   }
 
   .app-container {

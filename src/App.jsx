@@ -79,8 +79,8 @@ function App() {
     return (
         <div className="app-container" style={{ fontFamily: 'Inter, sans-serif' }}>
             <header style={{ marginBottom: '2rem', borderBottom: '1px solid #30363d', paddingBottom: '1rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }} className="header-container">
-                <div style={{ display: 'flex', alignItems: 'flex-end', gap: '1rem', flexWrap: 'wrap' }}>
-                    <h1 style={{ margin: 0, fontSize: '2rem', background: 'linear-gradient(90deg, #58a6ff, #8b949e)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', lineHeight: 1 }}>
+                <div style={{ display: 'flex', alignItems: 'flex-end', gap: '1rem', flexWrap: 'wrap', width: '100%', justifyContent: 'center' }}>
+                    <h1 style={{ margin: 0, fontSize: '2rem', background: 'linear-gradient(90deg, #58a6ff, #8b949e)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', lineHeight: 1, textAlign: 'center' }}>
                         주식 투자 어드바이저
                     </h1>
                     <span style={{ color: '#8b949e', fontSize: '0.9rem', fontWeight: 'normal', paddingBottom: '2px', lineHeight: 1.2 }}>( AI 기반의 투자 지원 솔루션 )</span>
@@ -306,7 +306,7 @@ function App() {
             {/* Donation */}
             <div style={{ background: '#161b22', padding: '1.5rem', borderRadius: '8px', textAlign: 'center', marginTop: '2rem' }}>
                 <h3 style={{ margin: '0 0 1rem 0', color: '#e6edf3' }}>☕ 개발자 후원 (Donation)</h3>
-                <div style={{ display: 'inline-block', background: '#0d1117', padding: '1rem', borderRadius: '8px', border: '1px solid #30363d', width: '100%', boxSizing: 'border-box' }}>
+                <div style={{ display: 'block', background: '#0d1117', padding: '1rem', borderRadius: '8px', border: '1px solid #30363d', width: '100%', boxSizing: 'border-box', margin: '0 auto' }}>
                     <div style={{ fontSize: '1.1rem', fontWeight: 'bold', color: '#58a6ff', marginBottom: '0.5rem' }}>
                         우리은행 1002-632-473859
                     </div>
