@@ -32,6 +32,8 @@ const TRANSLATIONS = {
         donation_desc: "모든 기능은 무료이며 후원여부 무관하게 동일한 기능을 제공하고, 후원자 전용 상담은 받지 않습니다. 🙌",
         disclaimer: "⚠️ 투자 판단은 본인 책임! 수익은 보장되지 않아요.",
         contact: "Contact: phan98susan@gmail.com",
+        donation_info: "우리은행 1002-632-473859",
+        donation_holder: "이재성",
         total_score: "종합 점수",
         price_label: "주가",
         pe_label: "P/E",
@@ -68,6 +70,8 @@ const TRANSLATIONS = {
         donation_desc: "All features are free regardless of donation. No private consultation provided. 🙌",
         disclaimer: "⚠️ Investment decisions are your responsibility. Returns are not guaranteed.",
         contact: "Contact: phan98susan@gmail.com",
+        donation_info: "Woori Bank 1002-632-473859",
+        donation_holder: "Jaeseong Lee",
         total_score: "Total Score",
         price_label: "Price",
         pe_label: "P/E",
@@ -412,9 +416,9 @@ function App() {
                 <h3 style={{ margin: '0 0 1rem 0', color: '#e6edf3' }}>{t.donation_title}</h3>
                 <div style={{ display: 'block', background: '#0d1117', padding: '1rem', borderRadius: '8px', border: '1px solid #30363d', width: '100%', boxSizing: 'border-box', margin: '0 auto' }}>
                     <div style={{ fontSize: '1.1rem', fontWeight: 'bold', color: '#58a6ff', marginBottom: '0.5rem' }}>
-                        우리은행 1002-632-473859
+                        {t.donation_info}
                     </div>
-                    <div style={{ color: '#8b949e' }}>{t.account_holder_label}: 이재성</div>
+                    <div style={{ color: '#8b949e' }}>{t.account_holder_label}: {t.donation_holder}</div>
                 </div>
                 <p style={{ fontSize: '0.85rem', color: '#8b949e', marginTop: '1rem', lineHeight: '1.5' }}>
                     {t.donation_desc}
